@@ -34,11 +34,11 @@ def list_mean(li: List[float]) -> float:
 
 
 def list_stddev(li: List[float]) -> float:
-    total = 0
     mean = list_mean(li)
+    variance = 0
     for x in li:
-        total += (mean - x) ** 2
-    return (total / 2) ** 0.5
+        variance += (mean - x) ** 2 / len(li)
+    return variance ** 0.5
 
 
 def is_prime(n: int) -> bool:
@@ -71,10 +71,10 @@ def all_factors(n: int) -> Set[int]:
 
 
 def primes_up_to(n: int) -> Set[int]:
-    primes = range(2, n + 1)
+    primes = list(range(2, n + 1))
     x = 0
-    while x < len(primes) - 1:
-        primes = [i for i in primes if i <= primes[x] or i % primes[x] != 0]
+    while x < len(primes):
+        primes = primes[:x + 1] + [i for i in primes[x + 1:] if i % primes[x] != 0]
         x += 1
     return set(primes)
 

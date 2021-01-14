@@ -18,6 +18,16 @@ class ListMin(TestCase):
         self.assertEqual(-15, list_min(list(range(-15, -9))))
 
 
+class ListMean(TestCase):
+    def test(self):
+        self.assertEqual(5, list_mean(list(range(0, 11))))
+
+
+class ListStdDev(TestCase):
+    def test(self):
+        self.assertEqual(10**0.5, list_stddev(list(range(0, 11))))
+
+
 class IsPrime(TestCase):
     def test_13(self):
         self.assertTrue(is_prime(13))
