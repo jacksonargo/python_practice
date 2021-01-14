@@ -10,7 +10,8 @@ Please ask questions!_
 
 ```python
 1 + 1 == 2 # addition
-1 * 1 == 1 # subtraction
+1 - 1 == 0 # subtraction
+1 * 1 == 1 # multiplication
 1 / 2 == 0.5 # floating point division
 2 ** 2 == 4 # exponential
 1 // 2 == 0 # integer division
